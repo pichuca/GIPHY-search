@@ -31,6 +31,7 @@ class SearchBox extends Component {
           searchList: searchListFromAPI,
         });
       });
+    // TODO: add search list to Redux state mgmt.
   }
   render() {
     return (

@@ -47,7 +47,6 @@ class SearchInputField extends Component {
         fullWidth
         margin="normal"
         onChange={this.handleChange}
-        onInput={this.props.query}
       />
     );
   }
