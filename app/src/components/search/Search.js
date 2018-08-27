@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import SearchBox from './search-box/SearchBox';
 import './Search.css';

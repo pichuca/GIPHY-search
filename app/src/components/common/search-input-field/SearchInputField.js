@@ -21,30 +21,34 @@ const styles = theme => ({
 class SearchInputField extends Component {
   constructor(props) {
     super(props);
-    this.state = {}; 
+    this.state = {
+      query: ''
+    };
+
+    // Bind events.
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = name => event => {
+  handleChange(event) {
     this.setState({
-      [name]: event.target.value,
+      query: event.target.value,
     });
+    this.props.onInput(this.state.query);
   };
 
   render() {
-    const { classes } = this.props;
-
     return (
-      <form className={classes.container} noValidate autoComplete="off">
-        <TextField
-          id="full-width"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          placeholder="Search"
-          fullWidth
-          margin="normal"
-        />
-      </form>
+      <TextField
+        id="full-width"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        placeholder="Search"
+        fullWidth
+        margin="normal"
+        onChange={this.handleChange}
+        onInput={this.props.query}
+      />
     );
   }
 }

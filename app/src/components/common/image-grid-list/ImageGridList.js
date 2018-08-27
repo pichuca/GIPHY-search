@@ -26,7 +26,7 @@ function ImageGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={160} className={classes.gridList} cols={10}>
+      <GridList cellHeight={160} className={classes.gridList} cols={props.cols}>
         {props.items.map(item => (
           <GridListTile key={item.id} cols={item.cols || 1}>
             <a target="_black" href={item.url}>

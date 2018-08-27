@@ -30,7 +30,7 @@ class Trending extends Component {
     return (
       <div className="trending">
         <h1>Trending: #10</h1>
-        <ImageGridList items={trendingItems} />
+        <ImageGridList items={trendingItems} cols={10} />
       </div>
     );
   }
