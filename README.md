@@ -20,4 +20,4 @@ run `npm run build`
 run `npm test`
     Starts the test runner.
     
-This application is built with create-react-app.
+This application is built upon create-react-app.
