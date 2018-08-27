@@ -26,7 +26,7 @@ function ImageGridList(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={160} className={classes.gridList} cols={5}>
+      <GridList cellHeight={160} className={classes.gridList} cols={10}>
         {props.items.map(item => (
           <GridListTile key={item.id} cols={item.cols || 1}>
             <img src={item.images.fixed_height.webp_url || item.images.fixed_height.gif_url} alt="gif" />
