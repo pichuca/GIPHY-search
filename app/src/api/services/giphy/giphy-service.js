@@ -3,12 +3,28 @@
  * Get data from GIPHY API.
  */
 
+const GIPHYAPIClient = require('giphy-js-sdk-core');
+const API_KEY = 'onnDyCJfWZD6YscmKY1c8148cJjbJ8DN';
+const client = GIPHYAPIClient(API_KEY);
+
 class GiphyService {
   static getTrending() {
-    // TODO: trending
+    client.trending('gifs', {})
+      then(((response) => {
+        console.log(response);
+      }))
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   static searchQuery(query) {
-    // TODO: search
+    client.search('gifs', { 'q': query })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 }
