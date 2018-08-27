@@ -9,9 +9,9 @@ const client = GIPHYAPIClient(API_KEY);
 
 class GiphyService {
   static getTrending() {
-    client.trending('gifs', { limit: 10 })
+    return client.trending('gifs', { limit: 10 })
       .then(((response) => {
-        console.log(response.data);
+        return response.data;
       }))
       .catch((error) => {
         console.log(error);
@@ -19,7 +19,7 @@ class GiphyService {
   }
 
   static searchQuery(query) {
-    client.search('gifs', { 'q': query })
+    return client.search('gifs', { 'q': query })
       .then((response) => {
         console.log(response);
       })

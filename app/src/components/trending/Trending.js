@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+
 import GIPHYService from '../../api/services/giphy/giphy-service';
+import ImageGridList from '../common/image-grid-list/ImageGridList';
 import './Trending.css';
 
 class Trending extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trendingItems: null,
+      trendingItems: [],
     };
 
     // Bind methods.
@@ -16,13 +18,19 @@ class Trending extends Component {
     this.getTrendingItems();
   }
   getTrendingItems() {
-    GIPHYService.getTrending();
+    GIPHYService.getTrending()
+      .then((items) => {
+        this.setState({
+          trendingItems: items,
+        });
+      });
   }
   render() {
+    const trendingItems = this.state.trendingItems;
     return (
       <div className="trending">
         <h1>Trending: #10</h1>
-        {/* Trending GIFs list */}
+        <ImageGridList items={trendingItems} />
       </div>
     );
   }
