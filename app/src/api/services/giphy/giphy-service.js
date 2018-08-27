@@ -9,8 +9,8 @@ const client = GIPHYAPIClient(API_KEY);
 
 class GiphyService {
   static getTrending() {
-    client.trending('gifs', {})
-      then(((response) => {
+    client.trending('gifs', { limit: 10 })
+      .then(((response) => {
         console.log(response);
       }))
       .catch((error) => {
