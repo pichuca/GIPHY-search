@@ -19,7 +19,7 @@ class GiphyService {
   }
 
   static searchQuery(query) {
-    return client.search('gifs', { 'q': query })
+    return client.search('gifs', { q: query, limit: 20 })
       .then((response) => {
         console.log(response);
       })
