@@ -1,0 +1,14 @@
+.search-button span.MuiButton-label-28 {
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+.search-button span.MuiButton-label-28,
+.search-button.MuiButton-containedPrimary-39 {
+  background-color: #333333;
+}
+
+.search-button.MuiButton-containedPrimary-39::placeholder,
+.search-button span.MuiButton-label-28 {
+  font-family: monospace;
+}

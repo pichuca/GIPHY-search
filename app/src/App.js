@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
+import './App.css';
 import SearchAndTrending from './features/search-and-trending/SearchAndTrending';
 
 class App extends Component {
@@ -12,7 +17,12 @@ class App extends Component {
             <code>GIPHY-search</code>
           </p>
         </header>
-        <SearchAndTrending />
+        <Router>
+          <SearchAndTrending />
+          
+
+          <Route path="/search-results" component={}/>
+        </Router>
       </div>
     );
   }
